@@ -1,6 +1,11 @@
 {
   "name": "follow-the-sun-orchestrator",
   "version": "0.1.0",
+  "description": "AI-Powered Global Handover Intelligence Platform for Distributed Consulting Teams",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/thereader81/Follow-the-clock-handover-app.git"
+  },
   "private": true,
   "scripts": {
     "dev": "next dev",
