@@ -95,17 +95,17 @@ Helix utilizes a "Zero-Backend" architecture for maximum portability and ease of
 
 ```mermaid
 graph TD
-    User([User]) -->|Interacts| Client[Next.js Client (Browser)]
+    User([User]) -->|Interacts| Client["Next.js Client (Browser)"]
     
     subgraph "Browser Runtime"
-        Client -->|Reads/Writes| Context[React Auth Context]
-        Client -->|Reads/Writes| Local[LocalStorage (Persistence)]
-        Client -->|Fetches| Seed[Static JSON Seed Data]
+        Client -->|Reads/Writes| Context["React Auth Context"]
+        Client -->|Reads/Writes| Local["LocalStorage (Persistence)"]
+        Client -->|Fetches| Seed["Static JSON Seed Data"]
     end
     
     subgraph "Simulated Integrations"
-        Local -.->|Mock Sync| JIRA[JIRA (Mock)]
-        Local -.->|Mock Sync| Slack[Slack (Mock)]
+        Local -.->|Mock Sync| JIRA["JIRA (Mock)"]
+        Local -.->|Mock Sync| Slack["Slack (Mock)"]
     end
     
     style Client fill:#3b82f6,stroke:#fff,stroke-width:2px
