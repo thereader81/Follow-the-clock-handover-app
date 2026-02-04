@@ -1,0 +1,702 @@
+{
+  "_metadata": {
+    "version": "1.0.0",
+    "description": "Mock AI responses for Follow-the-Sun Orchestrator demo",
+    "usage": "Import this file and match handoverId to get corresponding AI response",
+    "lastUpdated": "2026-02-03"
+  },
+
+  "handoverSummaries": {
+    "HO-2026-0001": {
+      "handoverId": "HO-2026-0001",
+      "route": "London → New York",
+      "generatedAt": "2026-02-03T17:30:00Z",
+      "processingTimeMs": 2340,
+      "confidence": 0.94,
+      "sourcesAnalyzed": 23,
+      
+      "tldr": "Customer API migration is 80% complete with 3 endpoints remaining. **Critical decision needed** on OAuth vs SAML authentication approach before the Feb 5 client call. Performance testing is delayed 2 days due to environment provisioning issues—escalate to infrastructure team if not resolved by EOD tomorrow.",
+      
+      "executiveSummary": {
+        "status": "ON_TRACK_WITH_RISKS",
+        "completionPercentage": 80,
+        "keyMessage": "Strong progress on API migration, but authentication decision is blocking final 20%",
+        "recommendedActions": [
+          "Schedule 30-min sync with security team on auth approach",
+          "Escalate environment issue to DevOps lead",
+          "Prepare hybrid auth proposal for client presentation"
+        ]
+      },
+      
+      "criticalDecisions": [
+        {
+          "id": "DEC-001",
+          "title": "OAuth 2.0 vs SAML Authentication Strategy",
+          "context": "Client security team strongly prefers SAML for enterprise SSO compliance. However, 3 legacy downstream systems currently use OAuth 2.0 and migration would add 2-3 weeks to timeline.",
+          "options": [
+            {
+              "option": "Full SAML Migration",
+              "pros": "Client preferred, better audit trail, enterprise compliance",
+              "cons": "2-3 week delay, legacy system risk",
+              "effort": "High"
+            },
+            {
+              "option": "Hybrid Approach",
+              "pros": "No delay, gradual migration, lower risk",
+              "cons": "Temporary complexity, dual maintenance",
+              "effort": "Medium"
+            },
+            {
+              "option": "OAuth with SAML Bridge",
+              "pros": "Quick implementation, standards compliant",
+              "cons": "Additional component to maintain",
+              "effort": "Low"
+            }
+          ],
+          "recommendation": "Propose **Hybrid Approach** with SAML for new endpoints and planned OAuth deprecation in Phase 2. This balances client preference with timeline constraints.",
+          "deadline": "2026-02-05T14:00:00Z",
+          "owner": "Sarah Mitchell",
+          "severity": "high"
+        }
+      ],
+      
+      "workItemsSummary": {
+        "total": 12,
+        "completed": 7,
+        "inProgress": 3,
+        "blocked": 1,
+        "notStarted": 1,
+        "items": [
+          {
+            "id": "JIRA-4521",
+            "title": "API endpoint documentation - Customer Portal v3",
+            "status": "completed",
+            "aiContext": "All 8 endpoints documented in Confluence. Swagger specs generated and validated. Ready for client review.",
+            "completedAt": "2026-02-03T15:30:00Z"
+          },
+          {
+            "id": "JIRA-4532",
+            "title": "Payment gateway integration - Timeout optimization",
+            "status": "in_progress",
+            "progress": 60,
+            "aiContext": "Connection pooling implemented. Retry logic added. Pending: circuit breaker pattern for cascading failure prevention.",
+            "estimatedCompletion": "2026-02-04T12:00:00Z"
+          },
+          {
+            "id": "JIRA-4545",
+            "title": "Performance test environment provisioning",
+            "status": "blocked",
+            "aiContext": "Blocked on infrastructure team. Ticket raised 3 days ago (INFRA-892). No response yet. **Recommend escalation.**",
+            "blockedBy": "INFRA-892",
+            "blockedSince": "2026-01-31T10:00:00Z"
+          },
+          {
+            "id": "JIRA-4548",
+            "title": "Customer notification service - Email templates",
+            "status": "in_progress",
+            "progress": 40,
+            "aiContext": "5 of 12 email templates completed. Branding guidelines received. On track for Feb 6 completion."
+          },
+          {
+            "id": "JIRA-4552",
+            "title": "API rate limiting implementation",
+            "status": "in_progress",
+            "progress": 85,
+            "aiContext": "Redis-based rate limiter deployed to staging. Final testing in progress. Token bucket algorithm performing within SLA."
+          },
+          {
+            "id": "ADO-8834",
+            "title": "Customer portal responsive design fixes",
+            "status": "completed",
+            "aiContext": "All breakpoint issues resolved. Mobile and tablet views verified. QA signed off."
+          },
+          {
+            "id": "ADO-8841",
+            "title": "Session management hardening",
+            "status": "completed",
+            "aiContext": "JWT refresh rotation implemented. Session timeout reduced to 15 minutes per security policy."
+          }
+        ]
+      },
+      
+      "risks": [
+        {
+          "id": "RISK-001",
+          "title": "Performance testing delay may impact Feb 12 milestone",
+          "description": "Test environment not provisioned. If not resolved by Feb 5, performance testing will push into Week 7, risking the Feb 12 UAT milestone.",
+          "impact": "Schedule delay, potential client escalation",
+          "probability": "high",
+          "severity": "high",
+          "mitigation": "Escalate INFRA-892 to VP Engineering. Request cloud sandbox as backup.",
+          "owner": "Rajesh Kumar"
+        },
+        {
+          "id": "RISK-002",
+          "title": "New team member onboarding consuming senior resources",
+          "description": "Priya is ramping up and requiring 2-3 hours daily from Rajesh for knowledge transfer.",
+          "impact": "Reduced senior developer capacity",
+          "probability": "medium",
+          "severity": "medium",
+          "mitigation": "Front-load critical path items. Schedule dedicated onboarding blocks.",
+          "owner": "Sarah Mitchell"
+        }
+      ],
+      
+      "timeline": [
+        {
+          "timestamp": "2026-02-03T09:00:00Z",
+          "event": "Daily standup completed",
+          "type": "meeting",
+          "participants": ["Sarah Mitchell", "Rajesh Kumar", "James Wilson"]
+        },
+        {
+          "timestamp": "2026-02-03T11:30:00Z",
+          "event": "JIRA-4521 documentation completed",
+          "type": "completion",
+          "actor": "James Wilson"
+        },
+        {
+          "timestamp": "2026-02-03T14:00:00Z",
+          "event": "Client call - API demo",
+          "type": "meeting",
+          "participants": ["Michael Rodriguez", "Client: TerraBank CTO"],
+          "outcome": "Positive feedback. Auth decision requested by Friday."
+        },
+        {
+          "timestamp": "2026-02-03T16:00:00Z",
+          "event": "Handover initiated",
+          "type": "handover",
+          "actor": "Sarah Mitchell"
+        }
+      ],
+      
+      "contextLinks": [
+        {
+          "type": "confluence",
+          "title": "API Migration Runbook",
+          "url": "https://confluence.example.com/display/TERRA/API-Migration-v3"
+        },
+        {
+          "type": "jira",
+          "title": "Sprint Board - Week 6",
+          "url": "https://jira.example.com/secure/RapidBoard.jspa?rapidView=142"
+        },
+        {
+          "type": "slack",
+          "title": "#terrabank-api-migration channel",
+          "url": "https://slack.example.com/archives/C04TERRABANK"
+        }
+      ]
+    },
+
+    "HO-2026-0002": {
+      "handoverId": "HO-2026-0002",
+      "route": "Singapore → Bangalore",
+      "generatedAt": "2026-02-03T10:00:00Z",
+      "processingTimeMs": 1890,
+      "confidence": 0.91,
+      "sourcesAnalyzed": 18,
+      
+      "tldr": "Data pipeline migration running smoothly with **96% uptime** during parallel operation. ML model retraining completed successfully—accuracy improved from 87.3% to 91.2%. One P2 escalation on data quality flagged by Singapore team needs investigation.",
+      
+      "executiveSummary": {
+        "status": "ON_TRACK",
+        "completionPercentage": 72,
+        "keyMessage": "Phase 2 data migration ahead of schedule. ML model performance exceeding targets.",
+        "recommendedActions": [
+          "Investigate DQ-0087 data quality issue",
+          "Begin Phase 3 planning with London team",
+          "Schedule model performance review with client data science team"
+        ]
+      },
+      
+      "criticalDecisions": [
+        {
+          "id": "DEC-002",
+          "title": "Data Retention Policy for Legacy System",
+          "context": "Legacy system decommissioning scheduled for March 1. Client legal team requesting 7-year retention, but current architecture only supports 3 years.",
+          "recommendation": "Implement tiered storage with S3 Glacier for historical data. Estimated cost increase: $200/month.",
+          "deadline": "2026-02-10T18:00:00Z",
+          "owner": "Dr. Mei Lin Tan",
+          "severity": "medium"
+        }
+      ],
+      
+      "workItemsSummary": {
+        "total": 8,
+        "completed": 5,
+        "inProgress": 2,
+        "blocked": 0,
+        "notStarted": 1,
+        "items": [
+          {
+            "id": "JIRA-5201",
+            "title": "ML Model v2.4 deployment to production",
+            "status": "completed",
+            "aiContext": "Model deployed with blue-green strategy. A/B testing shows 4.1% improvement in prediction accuracy. Rollback plan tested and verified."
+          },
+          {
+            "id": "JIRA-5208",
+            "title": "Data quality monitoring dashboard",
+            "status": "in_progress",
+            "progress": 75,
+            "aiContext": "Dashboard 75% complete. Missing: anomaly detection alerts. Target: Feb 5."
+          },
+          {
+            "id": "DQ-0087",
+            "title": "Customer segment classification discrepancy",
+            "status": "in_progress",
+            "progress": 20,
+            "aiContext": "Singapore team identified 3.2% mismatch in customer segment data between systems. Root cause analysis in progress."
+          }
+        ]
+      },
+      
+      "risks": [
+        {
+          "id": "RISK-003",
+          "title": "Data quality discrepancy may affect model predictions",
+          "description": "3.2% mismatch could propagate to downstream ML predictions if not resolved before next model refresh.",
+          "severity": "medium",
+          "mitigation": "Isolate affected segments. Run parallel validation before model update.",
+          "owner": "Priya Sharma"
+        }
+      ]
+    },
+
+    "HO-2026-0003": {
+      "handoverId": "HO-2026-0003",
+      "route": "New York → Sydney",
+      "generatedAt": "2026-02-03T22:30:00Z",
+      "processingTimeMs": 2100,
+      "confidence": 0.88,
+      "sourcesAnalyzed": 15,
+      
+      "tldr": "**P1 Production incident resolved** at 20:45 EST. Root cause: memory leak in cache layer during peak load. Hotfix deployed, monitoring stable for 2 hours. Post-mortem scheduled for Sydney morning. No client impact reported.",
+      
+      "executiveSummary": {
+        "status": "RECOVERED",
+        "completionPercentage": 65,
+        "keyMessage": "Incident resolved. System stable. Documentation pending.",
+        "recommendedActions": [
+          "Complete incident post-mortem documentation",
+          "Review cache configuration with DevOps",
+          "Update runbook with new recovery steps"
+        ]
+      },
+      
+      "criticalDecisions": [],
+      
+      "workItemsSummary": {
+        "total": 5,
+        "completed": 3,
+        "inProgress": 2,
+        "blocked": 0,
+        "notStarted": 0,
+        "items": [
+          {
+            "id": "INC-0091",
+            "title": "P1 - Production cache memory leak",
+            "status": "completed",
+            "aiContext": "**RESOLVED** - Memory leak in Redis connection pool. Hotfix: connection limit reduced from 500 to 200, garbage collection tuned. Monitoring shows stable memory at 65% (down from 98%)."
+          },
+          {
+            "id": "RB-045",
+            "title": "Runbook update - Cache recovery procedure",
+            "status": "in_progress",
+            "progress": 30,
+            "aiContext": "New recovery steps being documented based on tonight's incident. Include: monitoring thresholds, escalation path, and rollback procedure."
+          }
+        ]
+      },
+      
+      "risks": [
+        {
+          "id": "RISK-004",
+          "title": "Recurrence risk if traffic increases 20%+",
+          "description": "Current fix is tactical. Long-term solution requires cache architecture review.",
+          "severity": "medium",
+          "mitigation": "Schedule architecture review. Consider Redis Cluster for horizontal scaling.",
+          "owner": "David Chen"
+        }
+      ]
+    }
+  },
+
+  "complexityPredictions": {
+    "SGP-BLR-2026-02-04": {
+      "route": "Singapore → Bangalore",
+      "predictedAt": "2026-02-03T15:00:00Z",
+      "scheduledTime": "2026-02-04T09:00:00Z",
+      "complexityScore": 7.2,
+      "confidence": 0.89,
+      "recommendedDuration": 45,
+      "standardDuration": 30,
+      "riskLevel": "elevated",
+      
+      "factors": {
+        "itemCount": { "value": 12, "weight": 0.25, "contribution": 1.8 },
+        "blockerCount": { "value": 2, "weight": 0.30, "contribution": 2.1 },
+        "decisionsPending": { "value": 1, "weight": 0.20, "contribution": 1.2 },
+        "newRecipient": { "value": false, "weight": 0.15, "contribution": 0.0 },
+        "historicalPerformance": { "value": 0.92, "weight": 0.10, "contribution": 0.8 }
+      },
+      
+      "attentionAreas": [
+        {
+          "area": "Technical Deep-Dive Required",
+          "reason": "2 P1 items require senior developer walkthrough",
+          "recommendation": "Ensure Rajesh joins the handover call"
+        },
+        {
+          "area": "Pending Decision",
+          "reason": "Auth strategy decision impacts 3 downstream tasks",
+          "recommendation": "Clarify decision timeline with London before handover"
+        },
+        {
+          "area": "Cross-Team Dependency",
+          "reason": "Infrastructure ticket affecting multiple workstreams",
+          "recommendation": "Provide clear escalation status update"
+        }
+      ],
+      
+      "historicalComparison": {
+        "averageForRoute": 5.8,
+        "percentileRank": 78,
+        "similarHandovers": [
+          { "id": "HO-2026-0089", "complexity": 7.5, "outcome": "success", "actualDuration": 52 },
+          { "id": "HO-2026-0076", "complexity": 6.9, "outcome": "success", "actualDuration": 38 },
+          { "id": "HO-2026-0063", "complexity": 7.8, "outcome": "delayed", "actualDuration": 65 }
+        ],
+        "successRateAtThisComplexity": 0.87
+      },
+      
+      "aiInsight": "This handover is **22% more complex** than the 30-day average for this route. Similar handovers succeeded 87% of the time when given 45+ minutes. Consider scheduling buffer time and pre-reading materials."
+    },
+
+    "LON-NYC-2026-02-04": {
+      "route": "London → New York",
+      "predictedAt": "2026-02-03T16:00:00Z",
+      "scheduledTime": "2026-02-04T17:00:00Z",
+      "complexityScore": 4.3,
+      "confidence": 0.94,
+      "recommendedDuration": 25,
+      "standardDuration": 30,
+      "riskLevel": "normal",
+      
+      "factors": {
+        "itemCount": { "value": 6, "weight": 0.25, "contribution": 0.9 },
+        "blockerCount": { "value": 0, "weight": 0.30, "contribution": 0.0 },
+        "decisionsPending": { "value": 0, "weight": 0.20, "contribution": 0.0 },
+        "newRecipient": { "value": false, "weight": 0.15, "contribution": 0.0 },
+        "historicalPerformance": { "value": 0.96, "weight": 0.10, "contribution": 0.4 }
+      },
+      
+      "attentionAreas": [],
+      
+      "aiInsight": "Straightforward handover expected. All items are well-documented with clear ownership. This route has maintained 96% efficiency over the past 30 days."
+    }
+  },
+
+  "qualityScores": {
+    "HO-2026-0001": {
+      "overallScore": 92,
+      "grade": "A",
+      "dimensions": {
+        "completeness": {
+          "score": 95,
+          "weight": 0.30,
+          "details": "All required fields populated. 12/12 work items have descriptions. All blockers documented."
+        },
+        "clarity": {
+          "score": 88,
+          "weight": 0.25,
+          "details": "Summary is clear and actionable. Minor improvement: add estimated resolution time for RISK-001."
+        },
+        "timeliness": {
+          "score": 100,
+          "weight": 0.20,
+          "details": "Submitted 15 minutes before handover window. Excellent."
+        },
+        "accuracy": {
+          "score": 90,
+          "weight": 0.15,
+          "details": "All JIRA links verified. One Confluence link outdated (auto-flagged)."
+        },
+        "actionability": {
+          "score": 88,
+          "weight": 0.10,
+          "details": "Clear next steps for 10/12 items. Two items could use more specific action owners."
+        }
+      },
+      "suggestions": [
+        "Add estimated resolution time for blocked items",
+        "Update Confluence link for API Migration Runbook",
+        "Assign specific owner to 'Email templates' task"
+      ],
+      "comparedToAverage": "+8 points above your 30-day average",
+      "trend": "improving"
+    }
+  },
+
+  "aiInsights": {
+    "dashboard": [
+      {
+        "id": "INS-001",
+        "type": "complexity_warning",
+        "severity": "high",
+        "icon": "alert-triangle",
+        "title": "High Complexity Transition Ahead",
+        "message": "Singapore → Bangalore transition predicted at 7.2/10 complexity. **Recommend 45-minute window** instead of standard 30 minutes.",
+        "actionLabel": "Adjust Schedule",
+        "actionType": "schedule_adjust",
+        "data": { "handoverId": "HO-2026-0004", "recommendedDuration": 45 },
+        "generatedAt": "2026-02-03T14:00:00Z"
+      },
+      {
+        "id": "INS-002",
+        "type": "pattern_detection",
+        "severity": "medium",
+        "icon": "trending-up",
+        "title": "Pattern Detected: Authentication Issues",
+        "message": "3 similar authentication-related blockers identified across projects this week. Consider **cross-project sync meeting** to share solutions.",
+        "actionLabel": "View Related Items",
+        "actionType": "view_items",
+        "data": { "itemIds": ["JIRA-4545", "JIRA-5102", "ADO-8899"] },
+        "generatedAt": "2026-02-03T12:00:00Z"
+      },
+      {
+        "id": "INS-003",
+        "type": "performance_highlight",
+        "severity": "positive",
+        "icon": "trophy",
+        "title": "Performance Highlight",
+        "message": "London team achieved **98.3% handover efficiency** this week—best performance in 6 months! 🎉",
+        "actionLabel": "Share Recognition",
+        "actionType": "share",
+        "data": { "region": "LON", "metric": "efficiency", "value": 98.3 },
+        "generatedAt": "2026-02-03T09:00:00Z"
+      },
+      {
+        "id": "INS-004",
+        "type": "optimization_suggestion",
+        "severity": "low",
+        "icon": "lightbulb",
+        "title": "Optimization Opportunity",
+        "message": "Bangalore → London handovers average 12 minutes faster when documentation is pre-shared 30 minutes before transition.",
+        "actionLabel": "Enable Auto-Share",
+        "actionType": "setting_toggle",
+        "data": { "setting": "preShareDocumentation", "recommendedValue": true },
+        "generatedAt": "2026-02-03T08:00:00Z"
+      },
+      {
+        "id": "INS-005",
+        "type": "risk_alert",
+        "severity": "high",
+        "icon": "alert-circle",
+        "title": "SLA Risk Detected",
+        "message": "INFRA-892 has been blocked for **72 hours**. If not resolved by EOD tomorrow, Feb 12 milestone is at risk.",
+        "actionLabel": "Escalate Now",
+        "actionType": "escalate",
+        "data": { "ticketId": "INFRA-892", "escalationLevel": "VP" },
+        "generatedAt": "2026-02-03T10:00:00Z"
+      }
+    ],
+    
+    "handoverRecommendations": {
+      "HO-2026-0001": [
+        {
+          "type": "pre_handover",
+          "message": "Share API documentation links 30 minutes before handover for faster context loading",
+          "impact": "Reduces handover time by ~8 minutes on average"
+        },
+        {
+          "type": "during_handover",
+          "message": "Prioritize discussing OAuth vs SAML decision—this is blocking 3 downstream tasks",
+          "impact": "Unblocks critical path"
+        },
+        {
+          "type": "post_handover",
+          "message": "Request acknowledgment within 15 minutes to maintain SLA",
+          "impact": "Maintains 95%+ time-to-first-action metric"
+        }
+      ]
+    }
+  },
+
+  "extractedWorkItems": {
+    "sample_slack_thread": {
+      "sourceType": "slack",
+      "sourceId": "C04TERRABANK-1707091234",
+      "extractedAt": "2026-02-03T14:30:00Z",
+      "confidence": 0.87,
+      "items": [
+        {
+          "title": "Review client feedback on dashboard mockups",
+          "type": "task",
+          "priority": "medium",
+          "suggestedOwner": "James Wilson",
+          "extractedFrom": "Sarah mentioned James should look at the client's comments on the new dashboard",
+          "dueDate": "2026-02-04"
+        },
+        {
+          "title": "Fix tooltip positioning on mobile",
+          "type": "bug",
+          "priority": "low",
+          "suggestedOwner": "Priya Sharma",
+          "extractedFrom": "Priya noticed tooltips are cut off on smaller screens",
+          "dueDate": null
+        },
+        {
+          "title": "Schedule security review with client CISO",
+          "type": "task",
+          "priority": "high",
+          "suggestedOwner": "Michael Rodriguez",
+          "extractedFrom": "Client requested security walkthrough before go-live",
+          "dueDate": "2026-02-07"
+        }
+      ]
+    },
+
+    "sample_email_thread": {
+      "sourceType": "email",
+      "sourceId": "MSG-20260203-142534",
+      "extractedAt": "2026-02-03T14:30:00Z",
+      "confidence": 0.91,
+      "items": [
+        {
+          "title": "Prepare executive summary for steering committee",
+          "type": "deliverable",
+          "priority": "high",
+          "suggestedOwner": "Sarah Mitchell",
+          "extractedFrom": "Client VP requested 2-page summary of progress for Friday's steering committee",
+          "dueDate": "2026-02-07"
+        }
+      ]
+    }
+  },
+
+  "naturalLanguageSearch": {
+    "queries": {
+      "what decisions were made about authentication last week": {
+        "results": [
+          {
+            "type": "decision",
+            "title": "OAuth 2.0 vs SAML Authentication Strategy",
+            "summary": "Pending decision. Client prefers SAML, but legacy systems on OAuth. Hybrid approach recommended.",
+            "handoverId": "HO-2026-0001",
+            "date": "2026-02-03",
+            "relevance": 0.95
+          },
+          {
+            "type": "discussion",
+            "title": "JWT token expiration policy",
+            "summary": "Decided to reduce session timeout from 30 to 15 minutes per security audit recommendation.",
+            "handoverId": "HO-2026-0098",
+            "date": "2026-01-30",
+            "relevance": 0.78
+          }
+        ]
+      },
+      
+      "show me all blocked items": {
+        "results": [
+          {
+            "id": "JIRA-4545",
+            "title": "Performance test environment provisioning",
+            "blockedBy": "INFRA-892",
+            "blockedDays": 3,
+            "owner": "Rajesh Kumar",
+            "impact": "Blocking Feb 12 milestone"
+          },
+          {
+            "id": "DQ-0087",
+            "title": "Customer segment classification discrepancy",
+            "blockedBy": "Data quality investigation",
+            "blockedDays": 1,
+            "owner": "Priya Sharma",
+            "impact": "May affect ML model accuracy"
+          }
+        ]
+      },
+      
+      "what happened in the production incident last night": {
+        "results": [
+          {
+            "type": "incident",
+            "id": "INC-0091",
+            "title": "P1 - Production cache memory leak",
+            "summary": "Memory leak in Redis connection pool caused OOM at 20:15 EST. Hotfix deployed at 20:45. Root cause: connection limit too high (500). Fixed by reducing to 200. System stable since 20:50.",
+            "status": "resolved",
+            "resolvedBy": "Michael Rodriguez",
+            "duration": "30 minutes",
+            "clientImpact": "None - failover worked correctly"
+          }
+        ]
+      }
+    }
+  },
+
+  "teamPerformance": {
+    "regions": {
+      "LON": {
+        "name": "London",
+        "efficiency": 98.3,
+        "trend": "+3.2%",
+        "avgHandoverTime": 28,
+        "contextLossRate": 2.1,
+        "onTimeRate": 99.1,
+        "topPerformers": [
+          { "name": "Sarah Mitchell", "score": 96 },
+          { "name": "James Wilson", "score": 94 }
+        ]
+      },
+      "BLR": {
+        "name": "Bangalore",
+        "efficiency": 91.5,
+        "trend": "+1.8%",
+        "avgHandoverTime": 35,
+        "contextLossRate": 5.2,
+        "onTimeRate": 94.3,
+        "topPerformers": [
+          { "name": "Rajesh Kumar", "score": 93 },
+          { "name": "Priya Sharma", "score": 89 }
+        ]
+      },
+      "SGP": {
+        "name": "Singapore",
+        "efficiency": 94.7,
+        "trend": "+2.5%",
+        "avgHandoverTime": 31,
+        "contextLossRate": 3.8,
+        "onTimeRate": 96.8,
+        "topPerformers": [
+          { "name": "Dr. Mei Lin Tan", "score": 95 },
+          { "name": "Aisha Okonkwo", "score": 92 }
+        ]
+      },
+      "SYD": {
+        "name": "Sydney",
+        "efficiency": 89.2,
+        "trend": "-0.5%",
+        "avgHandoverTime": 42,
+        "contextLossRate": 6.1,
+        "onTimeRate": 91.2,
+        "topPerformers": [
+          { "name": "David Chen", "score": 91 }
+        ]
+      },
+      "NYC": {
+        "name": "New York",
+        "efficiency": 93.8,
+        "trend": "+4.1%",
+        "avgHandoverTime": 29,
+        "contextLossRate": 4.2,
+        "onTimeRate": 95.5,
+        "topPerformers": [
+          { "name": "Michael Rodriguez", "score": 94 }
+        ]
+      }
+    }
+  }
+}

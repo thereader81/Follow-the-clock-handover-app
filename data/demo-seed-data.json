@@ -1,0 +1,451 @@
+{
+    "_metadata": {
+        "version": "1.0.0",
+        "description": "Demo seed data for Follow-the-Sun Orchestrator",
+        "lastUpdated": "2026-02-03"
+    },
+    "currentUser": {
+        "id": "user-001",
+        "name": "David Chen",
+        "email": "david.chen@meridian.com",
+        "avatar": "/avatars/david-chen.jpg",
+        "role": "LEAD",
+        "region": "SYD",
+        "timezone": "Australia/Sydney"
+    },
+    "regions": [
+        {
+            "id": "SYD",
+            "name": "Australia",
+            "city": "Sydney",
+            "flag": "🇦🇺",
+            "timezone": "Australia/Sydney",
+            "utcOffset": 11,
+            "workStart": "09:00",
+            "workEnd": "18:00",
+            "handoverStart": "17:00",
+            "handoverEnd": "18:00"
+        },
+        {
+            "id": "SGP",
+            "name": "Singapore",
+            "city": "Singapore",
+            "flag": "🇸🇬",
+            "timezone": "Asia/Singapore",
+            "utcOffset": 8,
+            "workStart": "09:00",
+            "workEnd": "18:00",
+            "handoverStart": "17:00",
+            "handoverEnd": "18:00"
+        },
+        {
+            "id": "BLR",
+            "name": "India",
+            "city": "Bangalore",
+            "flag": "🇮🇳",
+            "timezone": "Asia/Kolkata",
+            "utcOffset": 5.5,
+            "workStart": "10:00",
+            "workEnd": "19:00",
+            "handoverStart": "18:00",
+            "handoverEnd": "19:00"
+        },
+        {
+            "id": "LON",
+            "name": "United Kingdom",
+            "city": "London",
+            "flag": "🇬🇧",
+            "timezone": "Europe/London",
+            "utcOffset": 0,
+            "workStart": "09:00",
+            "workEnd": "18:00",
+            "handoverStart": "17:00",
+            "handoverEnd": "18:00"
+        },
+        {
+            "id": "NYC",
+            "name": "United States",
+            "city": "New York",
+            "flag": "🇺🇸",
+            "timezone": "America/New_York",
+            "utcOffset": -5,
+            "workStart": "09:00",
+            "workEnd": "18:00",
+            "handoverStart": "17:00",
+            "handoverEnd": "18:00"
+        }
+    ],
+    "users": [
+        {
+            "id": "user-001",
+            "name": "David Chen",
+            "email": "david.chen@meridian.com",
+            "role": "Solutions Architect",
+            "region": "SYD",
+            "avatar": "/avatars/david-chen.jpg"
+        },
+        {
+            "id": "user-002",
+            "name": "Dr. Mei Lin Tan",
+            "email": "meilin.tan@meridian.com",
+            "role": "Data Science Lead",
+            "region": "SGP",
+            "avatar": "/avatars/mei-lin.jpg"
+        },
+        {
+            "id": "user-003",
+            "name": "Rajesh Kumar",
+            "email": "rajesh.kumar@meridian.com",
+            "role": "Technical Lead",
+            "region": "BLR",
+            "avatar": "/avatars/rajesh-kumar.jpg"
+        },
+        {
+            "id": "user-004",
+            "name": "Priya Sharma",
+            "email": "priya.sharma@meridian.com",
+            "role": "ML Engineer",
+            "region": "BLR",
+            "avatar": "/avatars/priya-sharma.jpg"
+        },
+        {
+            "id": "user-005",
+            "name": "Sarah Mitchell",
+            "email": "sarah.mitchell@meridian.com",
+            "role": "Delivery Lead",
+            "region": "LON",
+            "avatar": "/avatars/sarah-mitchell.jpg"
+        },
+        {
+            "id": "user-006",
+            "name": "James Wilson",
+            "email": "james.wilson@meridian.com",
+            "role": "API Developer",
+            "region": "LON",
+            "avatar": "/avatars/james-wilson.jpg"
+        },
+        {
+            "id": "user-007",
+            "name": "Michael Rodriguez",
+            "email": "michael.rodriguez@meridian.com",
+            "role": "Client Partner",
+            "region": "NYC",
+            "avatar": "/avatars/michael-rodriguez.jpg"
+        },
+        {
+            "id": "user-008",
+            "name": "Aisha Okonkwo",
+            "email": "aisha.okonkwo@meridian.com",
+            "role": "Project Manager",
+            "region": "SGP",
+            "avatar": "/avatars/aisha-okonkwo.jpg"
+        }
+    ],
+    "handovers": [
+        {
+            "id": "HO-2026-0001",
+            "project": "Phoenix",
+            "displayId": "HO-2026-0001",
+            "fromRegion": "LON",
+            "toRegion": "NYC",
+            "createdBy": "user-005",
+            "receivedBy": "user-007",
+            "status": "COMPLETED",
+            "itemCount": 12,
+            "completedItems": 7,
+            "complexityScore": 6.8,
+            "qualityScore": 92,
+            "createdAt": "2026-02-03T17:00:00Z",
+            "acknowledgedAt": "2026-02-03T17:12:00Z",
+            "completedAt": "2026-02-03T22:30:00Z",
+            "duration": 35,
+            "hasAiSummary": true
+        },
+        {
+            "id": "HO-2026-0002",
+            "project": "Nexus",
+            "displayId": "HO-2026-0002",
+            "fromRegion": "SGP",
+            "toRegion": "BLR",
+            "createdBy": "user-002",
+            "receivedBy": "user-003",
+            "status": "COMPLETED",
+            "itemCount": 8,
+            "completedItems": 5,
+            "complexityScore": 5.4,
+            "qualityScore": 88,
+            "createdAt": "2026-02-03T09:30:00Z",
+            "acknowledgedAt": "2026-02-03T09:38:00Z",
+            "completedAt": "2026-02-03T15:00:00Z",
+            "duration": 28,
+            "hasAiSummary": true
+        },
+        {
+            "id": "HO-2026-0003",
+            "project": "Core Payment",
+            "displayId": "HO-2026-0003",
+            "fromRegion": "NYC",
+            "toRegion": "SYD",
+            "createdBy": "user-007",
+            "receivedBy": "user-001",
+            "status": "ACTIVE",
+            "itemCount": 5,
+            "completedItems": 3,
+            "complexityScore": 4.2,
+            "qualityScore": 95,
+            "createdAt": "2026-02-03T22:00:00Z",
+            "acknowledgedAt": "2026-02-03T22:08:00Z",
+            "completedAt": null,
+            "duration": null,
+            "hasAiSummary": true
+        },
+        {
+            "id": "HO-2026-0004",
+            "project": "Auth Service",
+            "displayId": "HO-2026-0004",
+            "fromRegion": "BLR",
+            "toRegion": "LON",
+            "createdBy": "user-003",
+            "receivedBy": "user-005",
+            "status": "PENDING_ACKNOWLEDGMENT",
+            "itemCount": 9,
+            "completedItems": 4,
+            "complexityScore": 7.2,
+            "qualityScore": 86,
+            "createdAt": "2026-02-03T13:00:00Z",
+            "acknowledgedAt": null,
+            "completedAt": null,
+            "duration": null,
+            "hasAiSummary": true
+        },
+        {
+            "id": "HO-2026-0005",
+            "project": "Phoenix",
+            "displayId": "HO-2026-0005",
+            "fromRegion": "SYD",
+            "toRegion": "SGP",
+            "createdBy": "user-001",
+            "receivedBy": "user-002",
+            "status": "DRAFT",
+            "itemCount": 6,
+            "completedItems": 2,
+            "complexityScore": null,
+            "qualityScore": null,
+            "createdAt": "2026-02-03T07:30:00Z",
+            "acknowledgedAt": null,
+            "completedAt": null,
+            "duration": null,
+            "hasAiSummary": false
+        }
+    ],
+    "upcomingTransitions": [
+        {
+            "id": "trans-001",
+            "fromRegion": "SYD",
+            "toRegion": "SGP",
+            "scheduledTime": "2026-02-04T07:00:00Z",
+            "estimatedItems": 6,
+            "predictedComplexity": 5.2,
+            "status": "scheduled"
+        },
+        {
+            "id": "trans-002",
+            "fromRegion": "SGP",
+            "toRegion": "BLR",
+            "scheduledTime": "2026-02-04T09:00:00Z",
+            "estimatedItems": 12,
+            "predictedComplexity": 7.2,
+            "status": "high_complexity"
+        },
+        {
+            "id": "trans-003",
+            "fromRegion": "BLR",
+            "toRegion": "LON",
+            "scheduledTime": "2026-02-04T13:30:00Z",
+            "estimatedItems": 8,
+            "predictedComplexity": 4.8,
+            "status": "scheduled"
+        },
+        {
+            "id": "trans-004",
+            "fromRegion": "LON",
+            "toRegion": "NYC",
+            "scheduledTime": "2026-02-04T17:00:00Z",
+            "estimatedItems": 7,
+            "predictedComplexity": 4.3,
+            "status": "scheduled"
+        }
+    ],
+    "kpiData": {
+        "current": {
+            "handoverEfficiency": {
+                "value": 94.2,
+                "target": 95,
+                "trend": 3.2,
+                "unit": "%"
+            },
+            "contextLossRate": {
+                "value": 4.8,
+                "target": 5,
+                "trend": -1.1,
+                "unit": "%"
+            },
+            "timeToFirstAction": {
+                "value": 12,
+                "target": 15,
+                "trend": -3,
+                "unit": "min"
+            },
+            "avgHandoverDuration": {
+                "value": 32,
+                "target": 45,
+                "trend": -8,
+                "unit": "min"
+            },
+            "deliveryVelocity": {
+                "value": 127,
+                "target": 125,
+                "trend": 5.2,
+                "unit": "%"
+            },
+            "escalationRate": {
+                "value": 2.3,
+                "target": 3,
+                "trend": -0.8,
+                "unit": "%"
+            },
+            "aiAdoptionRate": {
+                "value": 87,
+                "target": 80,
+                "trend": 12,
+                "unit": "%"
+            },
+            "knowledgePreservation": {
+                "value": 91.5,
+                "target": 90,
+                "trend": 2.3,
+                "unit": "%"
+            }
+        },
+        "trends": {
+            "handoverEfficiency": [
+                {
+                    "date": "2026-01-04",
+                    "value": 88.5
+                },
+                {
+                    "date": "2026-01-11",
+                    "value": 89.2
+                },
+                {
+                    "date": "2026-01-18",
+                    "value": 90.8
+                },
+                {
+                    "date": "2026-01-25",
+                    "value": 91.0
+                },
+                {
+                    "date": "2026-02-01",
+                    "value": 94.2
+                }
+            ],
+            "contextLossRate": [
+                {
+                    "date": "2026-01-04",
+                    "value": 8.2
+                },
+                {
+                    "date": "2026-01-11",
+                    "value": 7.5
+                },
+                {
+                    "date": "2026-01-18",
+                    "value": 6.3
+                },
+                {
+                    "date": "2026-01-25",
+                    "value": 5.9
+                },
+                {
+                    "date": "2026-02-01",
+                    "value": 4.8
+                }
+            ]
+        },
+        "byRegion": [
+            {
+                "region": "LON",
+                "name": "London",
+                "efficiency": 98.3,
+                "handovers": 24
+            },
+            {
+                "region": "SGP",
+                "name": "Singapore",
+                "efficiency": 94.7,
+                "handovers": 21
+            },
+            {
+                "region": "NYC",
+                "name": "New York",
+                "efficiency": 93.8,
+                "handovers": 22
+            },
+            {
+                "region": "BLR",
+                "name": "Bangalore",
+                "efficiency": 91.5,
+                "handovers": 28
+            },
+            {
+                "region": "SYD",
+                "name": "Sydney",
+                "efficiency": 89.2,
+                "handovers": 19
+            }
+        ]
+    },
+    "notifications": [
+        {
+            "id": "notif-001",
+            "type": "handover_pending",
+            "title": "Handover Pending Acknowledgment",
+            "message": "HO-2026-0004 from Bangalore is awaiting your acknowledgment",
+            "isRead": false,
+            "createdAt": "2026-02-03T13:05:00Z"
+        },
+        {
+            "id": "notif-002",
+            "type": "ai_insight",
+            "title": "AI Insight: High Complexity Predicted",
+            "message": "Tomorrow's Singapore → Bangalore transition predicted at 7.2/10 complexity",
+            "isRead": false,
+            "createdAt": "2026-02-03T14:00:00Z"
+        },
+        {
+            "id": "notif-003",
+            "type": "escalation",
+            "title": "P1 Incident Resolved",
+            "message": "INC-0091 (Cache memory leak) resolved by Michael Rodriguez",
+            "isRead": true,
+            "createdAt": "2026-02-03T20:50:00Z"
+        },
+        {
+            "id": "notif-004",
+            "type": "achievement",
+            "title": "Team Achievement",
+            "message": "London team achieved 98.3% efficiency—best in 6 months!",
+            "isRead": true,
+            "createdAt": "2026-02-03T09:00:00Z"
+        }
+    ],
+    "quickStats": {
+        "activeHandovers": 2,
+        "pendingAcknowledgment": 1,
+        "completedToday": 3,
+        "totalItemsInTransit": 26,
+        "blockedItems": 2,
+        "upcomingIn2Hours": 1
+    }
+}
