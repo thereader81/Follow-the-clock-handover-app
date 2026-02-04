@@ -79,6 +79,39 @@ The detailed operational view.
 - `/data`: JSON seed data for the demo environment
 - `/PRD`: Product Requirements Document and design specs
 
+## ☁️ Deployment
+
+The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+
+1.  Push your code to a GitHub repository.
+2.  Import your repository into Vercel.
+3.  Vercel will auto-detect Next.js and deploy.
+
+Since this is a client-side demo using LocalStorage, no backend configuration or environment variables are required.
+
+## 📐 Architecture
+
+Helix utilizes a "Zero-Backend" architecture for maximum portability and ease of demonstration.
+
+```mermaid
+graph TD
+    User([User]) -->|Interacts| Client[Next.js Client (Browser)]
+    
+    subgraph "Browser Runtime"
+        Client -->|Reads/Writes| Context[React Auth Context]
+        Client -->|Reads/Writes| Local[LocalStorage (Persistence)]
+        Client -->|Fetches| Seed[Static JSON Seed Data]
+    end
+    
+    subgraph "Simulated Integrations"
+        Local -.->|Mock Sync| JIRA[JIRA (Mock)]
+        Local -.->|Mock Sync| Slack[Slack (Mock)]
+    end
+    
+    style Client fill:#3b82f6,stroke:#fff,stroke-width:2px
+    style Local fill:#f59e0b,stroke:#fff,stroke-width:2px
+```
+
 ## 📄 Documentation
 
 - [Product Requirements (PRD)](./PRD/Follow_the_Sun_Orchestrator_PRD_v2.0_Enhanced.md)
